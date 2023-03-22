@@ -7,7 +7,7 @@
         <button v-bind:class="{disabled: this.cart.length <= 0}" class="card-link btn btn-dark btn-sm px-3 text-center" @click="showCheckout"><i
             class="fas fa-arrow-right mx-2"></i>Go
           to {{ this.title }} {{
-            cartItemCount
+            cartItemCountv
           }}</button>
       </div>
     </div>
