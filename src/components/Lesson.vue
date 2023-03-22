@@ -14,7 +14,7 @@
                                 lesson.location }}</b></span><br>
                             <span class="card-text fs-14">Price: <b class="card-subtitle mb-2 fs-14">£{{ lesson.price
                             }}</b></span><br>
-                            <span class="card-text fs-14">space: <b class="card-subtitle mb-2 fs-14">{{ lesson.space
+                            <span class="card-text fs-14">Space: <b class="card-subtitle mb-2 fs-14">{{ lesson.space
                             }}</b></span><br>
                             <span class="card-text fs-18"><i v-bind:class="lesson.icon"></i></span><br>
 
