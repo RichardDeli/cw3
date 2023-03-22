@@ -8,7 +8,7 @@
                     <div class="card-body d-flex justify-content-between ">
 
                         <div>
-                            <span class="card-text fs-14">Subject: <b class="card-subtitle mb-2 fs-14">{{ lesson.topic
+                            <span class="card-text fs-14">Topic: <b class="card-subtitle mb-2 fs-14">{{ lesson.topic
                             }}</b></span><br>
                             <span class="card-text fs-14">Location: <b class="card-subtitle mb-2 fs-14">{{
                                 lesson.location }}</b></span><br>
