@@ -1,7 +1,7 @@
 ---- <b>CST3145 Individual Coursework-3</b> ----
     <br> <br>
-    - <b>Github URL:</b> https://github.com/abdul-matin0/CST3145-Client/ <br>
-    - <b>Github page URL:</b> https://abdul-matin0.github.io/CST3145-Client/
+    - <b>Github URL:</b>https://github.com/RichardDeli/cw3/ <br>
+    - <b>Github page URL:</b> https://richarddeli.github.io/cw3/
 
     - Student Number:
     -RICHARD DELIHA  - M00891533   - RD786@LIVE.MDX.AC.UK
