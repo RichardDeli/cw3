@@ -8,22 +8,22 @@
                     <div class="card-body d-flex justify-content-between ">
 
                         <div>
-                            <span class="card-text fs-14">Topic: <b class="card-subtitle mb-2 fs-14">{{ lesson.topic
+                            <span class="card-text fs-14">subject: <b class="card-subtitle mb-2 fs-14">{{ lesson.subject
                             }}</b></span><br>
                             <span class="card-text fs-14">Location: <b class="card-subtitle mb-2 fs-14">{{
                                 lesson.location }}</b></span><br>
                             <span class="card-text fs-14">Price: <b class="card-subtitle mb-2 fs-14">£{{ lesson.price
                             }}</b></span><br>
-                            <span class="card-text fs-14">Space: <b class="card-subtitle mb-2 fs-14">{{ lesson.space
+                            <span class="card-text fs-14">spaces: <b class="card-subtitle mb-2 fs-14">{{ lesson.spaces
                             }}</b></span><br>
                             <span class="card-text fs-18"><i v-bind:class="lesson.icon"></i></span><br>
 
-                            <button v-bind:class="{ disabled: lesson.space <= 0 }" @click="addToCart(lesson._id)"
+                            <button v-bind:class="{ disabled: lesson.spaces <= 0 }" @click="addToCart(lesson._id)"
                                 class="card-link btn btn-dark btn-sm mt-md-5 px-lg-2"> <i class="fas fa-plus mx-1"></i>
                                 <span class="d-xl-none">Add</span>
                                 <span class="d-none d-xl-inline">Add to cart</span> </button>
                         </div>
-                        <img v-bind:src="baseURL + '/' + lesson.image" v-bind:alt="lesson.altText"
+                        <img v-bind:src="imageUrl + lesson.img" v-bind:alt="lesson.altText"
                             class="img-fluid border rounded" style="height: 202px; width: 120px; object-fit: cover">
 
                     </div>
@@ -37,7 +37,7 @@
 <script>
 export default {
     name: "Lesson",
-    props: ["lessonList", "baseURL", "search"],
+    props: ["lessonList", "imageUrl", "search"],
     methods: {
         addToCart: function (_id) {
             // emits a custom event that triggers the parent component to add a lesson to cart

@@ -15,7 +15,7 @@
     <!-- main -->
     <div class="row pt-2">
       <main class="d-flex justify-content-center">
-        <component :is="currentView" :lessonList="lessons" :baseURL="baseURL" @add-to-cart="addToCart"
+        <component :is="currentView" :lessonList="lessons" :imageUrl="imageUrl" @add-to-cart="addToCart"
           @remove-from-cart="removeFromCart" :cart="cart">
         </component>
       </main>
@@ -38,7 +38,8 @@ export default {
       name: '',
       search: '',
       phoneNumber: '',
-      baseURL: 'https://webstoreapp-env.eba-yi2fch33.eu-west-2.elasticbeanstalk.com'
+      imageUrl: "https://webbased-env.eba-p5pzhqty.eu-west-2.elasticbeanstalk.com/image/",
+      baseURL: 'https://webbased-env.eba-p5pzhqty.eu-west-2.elasticbeanstalk.com'
     }
   },
   components: { LessonComponent, CheckoutComponent },
@@ -51,7 +52,7 @@ export default {
     /// returns a new promise that will be resolved or rejected based on the result of the fetch call.
     getLessons() {
       let webstore = this
-      fetch(`${this.baseURL}/collections/lessons`).then(
+      fetch(`${this.baseURL}/lessons`).then(
         function (response) {
           response.json().then(
             function (json) {
@@ -66,20 +67,20 @@ export default {
     addToCart(_id) {
       // find selected lesson id
       var lesson = this.getLessonById(_id);
-      if (lesson.space > 0) {
-        // decrease lesson space
-        --lesson.space;
+      if (lesson.spaces > 0) {
+        // decrease lesson spaces
+        --lesson.spaces;
 
         // get existing item from cart
         var itemInCart = this.getCartItemFromCartByLessonId(_id);
 
         if (itemInCart != null) {
           // update existing item in cart with put
-          ++itemInCart.space;
+          ++itemInCart.spaces;
 
         } else {
           // adding new item to cart
-          itemInCart = { lessonId: _id, space: 1, lesson: lesson };
+          itemInCart = { lessonId: _id, spaces: 1, lesson: lesson };
           this.cart.push(itemInCart);
         }
       }
@@ -89,8 +90,8 @@ export default {
       // find selected lesson in cart
       var itemInCart = this.getCartItemFromCartByLessonId(lessonId);
 
-      if (itemInCart.space == 1) {
-        // if just one item space is left, remove item completely from cart
+      if (itemInCart.spaces == 1) {
+        // if just one item spaces is left, remove item completely from cart
         var index = this.cart.map(x => x.lessonId).indexOf(lessonId);
         this.cart.splice(index, 1);
 
@@ -99,13 +100,13 @@ export default {
           this.showCheckout();
         }
       } else {
-        // reduce number of space of item in cart
-        --itemInCart.space;
+        // reduce number of spaces of item in cart
+        --itemInCart.spaces;
       }
 
-      // increase lesson space 
+      // increase lesson spaces 
       var lesson = this.getLessonById(lessonId);
-      ++lesson.space;
+      ++lesson.spaces;
     },
     // get lesson by id
     getLessonById(_id) {
@@ -129,7 +130,7 @@ export default {
   computed: {
     cartItemCount: function () {
       if (this.cart.length > 0)
-        return this.cart.reduce((total, item) => total + item.space, 0);
+        return this.cart.reduce((total, item) => total + item.spaces, 0);
       return 0;
     },
   }

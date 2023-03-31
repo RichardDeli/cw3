@@ -7,13 +7,13 @@
                     <div class="card-body d-flex justify-content-between">
                         <div>
                             <span class="card-text fs-14">Subject:
-                                <b class="card-subtitle mb-2 fs-14">{{ item.lesson.topic }}</b></span><br />
+                                <b class="card-subtitle mb-2 fs-14">{{ item.lesson.subject }}</b></span><br />
                             <span class="card-text fs-14">Location:
                                 <b class="card-subtitle mb-2 fs-14">{{ item.lesson.location }}</b></span><br />
                             <span class="card-text fs-14">Price:
                                 <b class="card-subtitle mb-2 fs-14">£{{ item.lesson.price }}</b></span><br />
-                            <span class="card-text fs-14">space:
-                                <b class="card-subtitle mb-2 fs-14">{{ item.space }}</b></span><br />
+                            <span class="card-text fs-14">spaces:
+                                <b class="card-subtitle mb-2 fs-14">{{ item.spaces }}</b></span><br />
                             <span class="card-text fs-18"><i v-bind:class="item.lesson.icon"></i></span><br />
 
                             <button @click="removeFromCart(item.lessonId)"
@@ -21,7 +21,7 @@
                                 <i class="fas fa-minus mx-1"></i> Remove
                             </button>
                         </div>
-                        <img v-bind:src="baseURL + '/' + item.lesson.image" v-bind:alt="item.lesson.altText"
+                        <img v-bind:src="imageUrl + item.lesson.image" v-bind:alt="item.lesson.altText"
                             class="img-fluid border rounded" style="height: 202px; width: 120px; object-fit: cover" />
                     </div>
                 </div>
@@ -53,7 +53,7 @@
 <script>
 export default {
     name: "Checkout",
-    props: ["cart", "baseURL"],
+    props: ["cart", "imageUrl"],
     methods: {
         removeFromCart: function (_id) {
             // emits a custom event that triggers the parent component to remove a lesson from cart
