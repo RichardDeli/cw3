@@ -4,7 +4,7 @@
     - <b>Github page URL:</b> https://abdul-matin0.github.io/CST3145-Client/
 
     - Student Number:
-      - Abdul-Matin Adebayo - M00869707 - AA5328@LIVE.MDX.AC.UK
+    -RICHARD DELIHA  - M00891533   - RD786@LIVE.MDX.AC.UK
 	  
 	- Backend Server
 		- Node JS
