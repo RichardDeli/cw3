@@ -4,7 +4,7 @@
     - <b>Github page URL:</b> https://richarddeli.github.io/cw3/
 
     - Student Number:
-    -RICHARD DELIHA  - M00891533   - RD786@LIVE.MDX.AC.UK
+    -RICHARD DELIHA  - M00891533   - RD786@LIVE.MDX.AC.UK  
 	  
 	- Backend Server
 		- Node JS
